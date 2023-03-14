@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-discovery
+  labels:
+    app.kubernetes.io/name: podtato-head
+    app.kubernetes.io/component: entry
+    app.kubernetes.io/version: '0.2.7'
+    app.kubernetes.io/managed-by: kustomize
+data:
+    servicesConfig.yaml: |
+        hat:       "http://k-podtato-head-qa-hat:9001"
+        left-leg:  "http://k-podtato-head-qa-left-leg:9002"
+        left-arm:  "http://k-podtato-head-qa-left-arm:9003"
+        right-leg: "http://k-podtato-head-qa-right-leg:9004"
+        right-arm: "http://k-podtato-head-qa-right-arm:9005"

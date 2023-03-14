@@ -4,6 +4,7 @@ kind: Kustomization
 ## these resources comprise this kustomization
 resources:
   - ../../base
+  - configmap-discovery.yaml
 
 ## labels to be applied to all resources
 commonLabels:

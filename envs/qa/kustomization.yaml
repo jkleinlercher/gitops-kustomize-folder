@@ -9,8 +9,6 @@ resources:
 commonLabels:
   stage: qa
 
-namePrefix: k-podtato-head-qa-
-
 ## kustomize transformers that operate on resources
 transformers:
   - labels.yaml

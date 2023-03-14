@@ -1,0 +1,20 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: entry
+  labels:
+    app.kubernetes.io/name: podtato-head
+    app.kubernetes.io/version: 0.2.7
+    app.kubernetes.io/managed-by: kustomize
+spec:
+  rules:
+    - host: bla.blub.at
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: entry
+                port:
+                  number: 9000

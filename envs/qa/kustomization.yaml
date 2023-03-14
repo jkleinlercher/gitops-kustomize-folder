@@ -1,0 +1,39 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+## these resources comprise this kustomization
+resources:
+  - ../../base
+
+## labels to be applied to all resources
+commonLabels:
+  stage: qa
+
+namePrefix: k-podtato-head-qa-
+
+## kustomize transformers that operate on resources
+transformers:
+  - labels.yaml
+
+patches:
+  - target:
+      kind: Ingress
+      name: podtato-head-entry
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: suxess-it-qa-podtato-head-k.apps.cluster1.mcp.pitagora.at
+
+## patches to be applied to target resources
+#patches:
+#  - patch: |-
+#      - op: add
+#        path: /spec/template/spec/containers/0/env/-
+#        value: 
+#            name: PODTATO_PART_NUMBER
+#            value: "02"
+#    target:
+#      group: apps
+#      version: v1
+#      kind: Deployment  #patch all deployments
+##      name: podtato-head-hat  #patch a specific named deployment

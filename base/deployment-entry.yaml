@@ -21,7 +21,7 @@ spec:
         app.kubernetes.io/component: entry
     spec:
       terminationGracePeriodSeconds: 5
-      serviceAccountName: podtato-head
+      serviceAccountName: sa
       containers:
         - name: podtato-head-entry
           image: ghcr.io/podtato-head/entry:latest

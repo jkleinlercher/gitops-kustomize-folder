@@ -21,7 +21,7 @@ spec:
         app.kubernetes.io/component: left-arm
     spec:
       terminationGracePeriodSeconds: 5
-      serviceAccountName: podtato-head
+      serviceAccountName: sa
       containers:
         - name: podtato-head-left-arm
           image: ghcr.io/podtato-head/left-arm:latest

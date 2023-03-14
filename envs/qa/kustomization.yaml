@@ -17,7 +17,7 @@ transformers:
 patches:
   - target:
       kind: Ingress
-      name: podtato-head-entry
+      name: entry
     patch: |-
       - op: replace
         path: /spec/rules/0/host
